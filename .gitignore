@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+*.html.new
+*.html.tmp
+.cache/
+.vscode/
+.idea/
+preview/
+# dist is built in CI; keep local builds out of git
+dist/

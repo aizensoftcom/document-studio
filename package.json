@@ -1,0 +1,12 @@
+{
+  "name": "document-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline Document Studio PWA — edit bank/document templates locally",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-pwa.mjs",
+    "preview": "node scripts/build-pwa.mjs && npx --yes serve preview -p 4173",
+    "start": "npm run preview"
+  }
+}
