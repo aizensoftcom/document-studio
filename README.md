@@ -29,11 +29,23 @@ npx serve preview -p 4173
 
 ## Deploy (GitHub Pages)
 
-1. Push this repo to GitHub.
-2. Settings → Pages → Source: **GitHub Actions** or branch `gh-pages` / `main` with `/dist` (or root if you publish `dist` contents to `gh-pages`).
-3. After the first HTTPS load, **Install** works on other PCs; cache keeps it offline.
+Repo: https://github.com/aizensoftcom/document-studio  
 
-Workflow in `.github/workflows/pages.yml` publishes `dist/` automatically on push to `main`.
+Pages URL (when Actions can run): https://aizensoftcom.github.io/document-studio/
+
+Workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds `dist/` and deploys on push to `main`.
+
+**Note:** GitHub Actions is currently blocked on this account by a billing lock. Until that is cleared, use the local preview (or any static HTTPS host of the `preview/` / `dist/` folder) for Install on other machines.
+
+### Local / USB on another PC
+
+```bash
+npm run build
+# copy preview/ to the other machine, then:
+npx --yes serve preview -p 4173
+```
+
+Chrome → **Install app**. After the first load the service worker keeps Document Studio offline.
 
 ## Source
 
