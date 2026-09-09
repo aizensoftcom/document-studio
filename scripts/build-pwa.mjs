@@ -70,6 +70,7 @@ function buildTo(target) {
   console.log(`Built ${target} (${(html.length / 1e6).toFixed(1)} MB HTML)`);
 }
 
-buildTo(join(root, "preview"));
-buildTo(join(root, "dist"));
+const only = (process.env.BUILD_ONLY || "").toLowerCase();
+if (!only || only === "preview") buildTo(join(root, "preview"));
+if (!only || only === "dist") buildTo(join(root, "dist"));
 console.log("Done. Open preview/ via a local HTTPS/http server to Install / test offline.");
